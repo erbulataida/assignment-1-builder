@@ -1,6 +1,7 @@
 # Assignment 1 — Builder Pattern
 
 **Student:** Aida Yerbulat
+
 **Course:** Software Design Patterns
 
 ## Project
