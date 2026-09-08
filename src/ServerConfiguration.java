@@ -7,7 +7,7 @@ public class ServerConfiguration {
     private final boolean dockerEnabled;
     private final boolean monitoringEnabled;
 
-    private ServerConfiguration(
+     ServerConfiguration(
             String hostname,
             String operatingSystem,
             int cpuCores,

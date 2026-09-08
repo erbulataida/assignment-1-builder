@@ -1,14 +1,25 @@
 public class Main {
+
     public static void main(String[] args) {
 
-        ServerConfiguration server = new ServerConfiguration.Builder()
-                .hostname("web-server")
-                .operatingSystem("Ubuntu")
-                .cpuCores(4)
-                .ramGb(8)
-                .enableDocker()
-                .enableMonitoring()
-                .build();
+        ServerDirector director = new ServerDirector();
+
+        ServerConfigurationBuilder objectBuilder =
+                new ServerConfigurationBuilder();
+
+        director.makeProductionServer(objectBuilder);
+
+        ServerConfiguration server = objectBuilder.getResult();
+
+        ServerSummaryBuilder summaryBuilder =
+                new ServerSummaryBuilder();
+
+        director.makeProductionServer(summaryBuilder);
+
+        String summary = summaryBuilder.getResult();
+
         System.out.println(server);
+        System.out.println();
+        System.out.println(summary);
     }
 }
